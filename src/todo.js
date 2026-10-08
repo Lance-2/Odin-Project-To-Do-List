@@ -1,4 +1,4 @@
-const createTodo = (title, description, dueDate, priority) => {
+export const createTodo = (title, description, dueDate, priority) => {
     return {
         id: crypto.randomUUID(),
         title,

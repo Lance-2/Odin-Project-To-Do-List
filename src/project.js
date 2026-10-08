@@ -1,9 +1,9 @@
-const createProject = (name) => {
+export const createProject = (name) => {
     const id = crypto.randomUUID();
     const toDos = [];
 
     const addToDo = (toDo) => {
-        this.toDos.push(toDo);
+        toDos.push(toDo);
     };
 
     const removeToDo = (toDoId) => {
