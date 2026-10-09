@@ -7,9 +7,9 @@ export const createProject = (name) => {
     };
 
     const removeToDo = (toDoId) => {
-        const index = this.toDos.findIndex(toDo => toDo.id === toDoId);
+        const index = toDos.findIndex(toDo => toDo.id === toDoId);
         if (index !== -1) {
-            this.toDos.splice(index, 1);
+            toDos.splice(index, 1);
         }
     }
 

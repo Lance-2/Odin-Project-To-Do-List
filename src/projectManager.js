@@ -5,7 +5,8 @@ import { createTodo} from "./todo.js";
 export const controller = (() => {
     let projects = [];
     let currentProjectID;
-
+    let currentProject = null;
+    
     const getProjects = () => projects;
     const getCurrentProject = () => projects.find((p) => p.id === currentProjectID);
         
@@ -16,12 +17,27 @@ export const controller = (() => {
     }
 
     const addToDoToCurrentProject = (title, description, dueDate, priority) => {
-        const currentProject = getCurrentProject();
+        currentProject = getCurrentProject();
         if (currentProject) {
             const newToDo = createTodo(title, description, dueDate, priority);
             currentProject.addToDo(newToDo);
         }
     };
+    
+    const switchCurrentProject = (projectID) => {
+        currentProject = getCurrentProject();
+        if (currentProject) {
+            currentProjectID = projectID;
+        }
+    };
+
+    const removeToDoFromCurrentProject = (todoID) => {
+        currentProject = getCurrentProject();
+        if(currentProject) {
+            currentProject.removeToDo(todoID);
+        }
+        
+    }
     
     addProject("Default"); //add a default project
 
@@ -30,7 +46,9 @@ export const controller = (() => {
         getProjects,
         getCurrentProject,
         addProject,
-        addToDoToCurrentProject 
+        switchCurrentProject,
+        addToDoToCurrentProject,
+        removeToDoFromCurrentProject
     };
 
 })();
