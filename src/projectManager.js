@@ -1,5 +1,5 @@
 import { createProject } from "./project.js";
-import { createTodo} from "./todo.js";
+import { createTodo } from "./todo.js";
 
 
 export const controller = (() => {
@@ -35,10 +35,16 @@ export const controller = (() => {
         currentProject = getCurrentProject();
         if(currentProject) {
             currentProject.removeToDo(todoID);
+        }  
+    };
+
+    const ToggleToDoCompleteInCurrentProject = (todoID) => {
+        currentProject = getCurrentProject();
+        if(currentProject) {
+            currentProject.toggletoDoComplete(todoID);
         }
-        
-    }
-    
+    };
+
     addProject("Default"); //add a default project
 
 
@@ -48,7 +54,8 @@ export const controller = (() => {
         addProject,
         switchCurrentProject,
         addToDoToCurrentProject,
-        removeToDoFromCurrentProject
+        removeToDoFromCurrentProject,
+        ToggleToDoCompleteInCurrentProject
     };
 
 })();
