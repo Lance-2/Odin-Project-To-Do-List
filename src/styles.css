@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  min-height: 100vh;
+}
+.leftSide {
+  flex: 0 0 200px;
+  min-height: 100vh;
+  min-width: 200px;
+}
+
+.rightSide {
+  flex: 1 1 0;
+  min-height: 100vh;
+}
