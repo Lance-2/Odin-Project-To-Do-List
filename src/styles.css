@@ -3,16 +3,38 @@
   padding: 0;
   box-sizing: border-box;
 }
-body, html {
+body,
+html {
   min-height: 100vh;
 }
-.leftSide {
-  flex: 0 0 200px;
+.container {
+  display: flex;
+  flex-direction: row;
   min-height: 100vh;
-  min-width: 200px;
+}
+.desc {
+  font-size: 28px;
+  text-align: center;
+  padding: 12px;
 }
 
+.leftSide {
+  flex: 0 0 280px;
+  min-height: 100vh;
+  background-color: #ffb6c1;
+}
+.projectGroup {
+  padding: 12px;
+  display: flex;
+}
+.add {
+  margin: 20px;
+  font-size: 20px;
+  background-color: transparent;
+  
+
+}
 .rightSide {
-  flex: 1 1 0;
+  flex: 1;
   min-height: 100vh;
 }
